@@ -1,0 +1,55 @@
+import java.util.*;
+
+public class Main3 {
+
+    public static void main3(String[] args) {
+
+    }
+    void main3(){
+        Scanner leer=new Scanner(System.in);
+        gestionPaciente datos = new gestionPaciente();
+        gestionHorario info = new gestionHorario(datos);
+
+        int op;
+        boolean Salir=false;
+        System.out.println("Menú de acciones");
+        System.out.println("1. Registrar nuevo paciente");
+        System.out.println("2. Agendar Cita (Ya sea nuevo o no el paciente)");
+        System.out.println("3. Mostrar datos del Paciente");
+        System.out.println("4. Mostrar datos de la Cita");
+        System.out.println("4. Eliminar cita");
+        System.out.println("6. Salir");
+        while(!Salir){
+            try {
+                System.out.println("¿Cuál acción desea realizar?");
+                op=leer.nextInt();
+                switch (op){
+                    case 1:
+                        datos.nuevo();
+                        break;
+                    case 2:
+                        info.nuevo();
+                        break;
+                    case 3:
+                        datos.mostrar();
+                        break;
+                    case 4:
+                        info.mostrar();
+                        break;
+                    case 5:
+                        info.eliminar();
+                        break;
+                    case 6:
+                        Salir=true;
+                        break;
+                    default:
+                        System.out.println("Debe elegir solo números entre 1 y 5");
+                }
+
+            }catch (InputMismatchException e){
+                System.out.println("Valor no reconocido, se debe ingresar un número");
+                leer.next();
+            }
+        }
+    }
+}
