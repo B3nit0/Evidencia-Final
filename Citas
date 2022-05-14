@@ -1,0 +1,25 @@
+import java.util.Date;
+
+
+public class Main {
+
+    public static void main(String[] args) {
+
+    }
+
+    int id;
+    Date fechaCita;
+    int idDoctor;
+    int idPaciente;
+    String motivoCita;
+
+    public void main(int idC, Date fecha, int doctorId, int pacienteId, String motivo){
+        id = idC;
+        fechaCita = fecha;
+        idDoctor = doctorId;
+        idPaciente = pacienteId;
+        motivoCita = motivo;
+    }
+
+
+}
